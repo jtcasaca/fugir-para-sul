@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fugir para Sul — Uma rota de alojamento a Sul</title>
+  <meta name="description" content="Perde-te na descoberta, uma rota de alojamento a Sul. Setúbal, Porto Côvo e Cercal do Alentejo." />
+
+  <!--
+    Google Fonts — Fraunces (display serif, variable font),
+    Figtree (body sans-serif), DM Sans (UI/buttons)
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400,0,1&family=Figtree:wght@400;500&family=DM+Sans:opsz,wght@9..40,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <!--
+    =====================================================
+    HOLIDU PROFILE URL
+    ─────────────────────────────────────────────────────
+    Update the constant below to your Holidu profile URL.
+    All "Reservar" (Book) buttons reference this constant
+    via the data-book-url attribute — see main.js.
+    =====================================================
+  -->
+
+  <!-- ================================================
+       NAVIGATION
+       ================================================ -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+
+      <a href="#" class="nav__logo" aria-label="Fugir para Sul — página inicial">
+        <img
+          class="nav__logo-symbol"
+          src="assets/images/logo-symbol.svg"
+          alt=""
+          width="40"
+          height="40"
+        />
+        <img
+          class="nav__logo-wordmark"
+          src="assets/images/logo-lettering.svg"
+          alt="Fugir para Sul"
+          width="186"
+          height="16"
+        />
+      </a>
+
+      <!-- Language / globe button (icon only) -->
+      <button class="btn btn--ghost" aria-label="Idioma">
+        <img src="assets/images/icon-globe.svg" alt="" width="20" height="20" />
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================================================
+         HERO — above the fold
+         ================================================ -->
+    <section class="hero" aria-label="Início">
+
+      <!-- Warm radial glow circle (purely decorative) -->
+      <img
+        class="hero__circle"
+        src="assets/images/hero-circle.svg"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <!--
+        Scattered polaroid photos.
+        Hidden on mobile via CSS; visible from 1024px up.
+        The 6 positions replicate the Figma canvas coordinates.
+      -->
+      <div class="hero__photos" aria-hidden="true">
+        <div class="hero__photo hero__photo--tl">
+          <img src="assets/images/photo-hero-tl.png" alt="" />
+        </div>
+        <div class="hero__photo hero__photo--tr">
+          <img src="assets/images/photo-hero-tr.png" alt="" />
+        </div>
+        <div class="hero__photo hero__photo--ml">
+          <img src="assets/images/photo-setubal-main.png" alt="" />
+        </div>
+        <div class="hero__photo hero__photo--mr">
+          <img src="assets/images/photo-hero-extra.png" alt="" />
+        </div>
+        <div class="hero__photo hero__photo--bl">
+          <img src="assets/images/photo-hero-bl.png" alt="" />
+        </div>
+        <div class="hero__photo hero__photo--br">
+          <img src="assets/images/photo-hero-br.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Central content: logo, tagline, CTA -->
+      <div class="hero__content">
+        <div class="hero__logo">
+          <img
+            class="hero__logo-symbol"
+            src="assets/images/hero-symbol.svg"
+            alt=""
+            width="120"
+            height="120"
+          />
+          <img
+            class="hero__logo-wordmark"
+            src="assets/images/hero-lettering.svg"
+            alt="Fugir para Sul"
+            width="371"
+            height="32"
+          />
+        </div>
+
+        <p class="hero__tagline">
+          Perde-te na descoberta, uma rota de alojamento a Sul
+        </p>
+
+        <!--
+          BOOK BUTTON ─────────────────────────────────────
+          Update the href below with your Holidu profile URL.
+          Example: href="https://www.holidu.com/h/your-listing"
+          ─────────────────────────────────────────────────
+        -->
+        <a
+          href="https://www.holidu.com/TODO"
+          class="btn btn--primary btn--lg"
+          id="hero-cta"
+        >
+          Reservar
+        </a>
+      </div>
+
+      <!-- Social proof stats -->
+      <div class="hero__stats">
+
+        <div class="stat">
+          <span class="stat__value">4.8</span>
+          <div class="stat__stars" aria-label="Avaliação de 5 estrelas">
+            <img src="assets/images/icon-star.svg" alt="" width="16" height="16" />
+            <img src="assets/images/icon-star.svg" alt="" width="16" height="16" />
+            <img src="assets/images/icon-star.svg" alt="" width="16" height="16" />
+            <img src="assets/images/icon-star.svg" alt="" width="16" height="16" />
+            <img src="assets/images/icon-star.svg" alt="" width="16" height="16" />
+          </div>
+        </div>
+
+        <div class="stat">
+          <span class="stat__value">4</span>
+          <span class="stat__label">Alojamentos</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat__value">150+</span>
+          <span class="stat__label">Reviews</span>
+        </div>
+
+      </div>
+
+    </section><!-- /hero -->
+
+
+    <!-- ================================================
+         MANIFESTO
+         ================================================ -->
+    <section class="section section--manifesto" aria-labelledby="manifesto-heading">
+      <div class="card">
+        <h2 class="heading-xl" id="manifesto-heading">
+          Para nós, o Sul é o ponto cardeal perfeito.
+        </h2>
+        <div class="body-text">
+          <p>O Sul é o nosso símbolo de individualidade e, na Fugir para Sul sabemos bem o que isso significa. Também nós estivemos, em tempos, amarrados ao Norte mas conseguimos extrair dessa amarra aquilo que nos provocou a procurar este escape.</p>
+          <p>"Fugir para Sul" não há como negar, passa pela cabeça de todos, de vez em quando... Para nós, passou muitas vezes, e durante anos, como um desejo declarado de liberdade nua e crua e de uma vida sem relógio, aproveitando cada momento que o campo e o mar tinham para nos oferecer, para nos encontrarmos nesses momentos sem tempo.</p>
+          <p>A Fugir para Sul oferece um conjunto de desculpas perfeitas para atravessar as pontes vindas do Norte. Uma rota que começa a sul do Tejo, em Setúbal, nessa cidade à beira-mar. Prolonga-se pela língua da Costa Vicentina até à aldeia piscatória de Porto Côvo, e termina nos montes Alentejanos do Cercal do Alentejo, onde o campo e o mar se unem.</p>
+          <p>O Sul é sempre perfeito. Bem-vindo à fuga para te encontrares.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         PROPERTIES
+         Each property is an <article> with:
+           - a .gallery (scattered polaroid photos)
+           - a .property__info (text + book button)
+         Properties 1 & 3: gallery left (.property--img-left)
+         Properties 2 & 4: gallery right (.property--img-right)
+         ================================================ -->
+    <section class="section section--properties" aria-label="Os nossos alojamentos">
+
+      <!-- Decorative route path (faint, desktop only) -->
+      <img
+        class="deco-path"
+        src="assets/images/deco-path.svg"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <!-- ── Property 1: Setúbal ─────────────────── -->
+      <article
+        class="property property--img-left property--pad-top-lg"
+        id="setubal"
+        aria-labelledby="setubal-name"
+      >
+        <div class="gallery">
+          <div class="gallery__photo gallery__photo--main">
+            <img
+              src="assets/images/photo-setubal-2.png"
+              alt="Sala da Casa de Praia Vitoriana em Setúbal"
+            />
+          </div>
+          <div class="gallery__photo gallery__photo--sm-br">
+            <img src="assets/images/photo-setubal-3.png" alt="" />
+          </div>
+          <div class="gallery__photo gallery__photo--sm-ml">
+            <img src="assets/images/photo-setubal-main.png" alt="" />
+          </div>
+        </div>
+
+        <div class="property__info">
+          <div class="property__header">
+            <span class="property__location">Setúbal</span>
+            <div class="property__title-group">
+              <h3 class="heading-xl" id="setubal-name">Casa de Praia Vitoriana</h3>
+              <p class="property__meta">6 pessoas · 4 quartos · 6 camas · 2 casas de banho</p>
+            </div>
+          </div>
+
+          <div class="body-text">
+            <p>Localizada na Avenida Luisa Todi, a principal artéria da cidade de Setúbal, esta casa vitoriana é perfeita para a primeira Fuga para Sul.</p>
+            <p>Pode parecer um Sul ainda muito próximo do Norte, ou da grande capital, mas, na verdade, este é um Sul que já cheira a mar, a peixe fresco, a areais imensos e a águas calmas e convidativas.</p>
+          </div>
+
+          <!--
+            BOOK BUTTON — update href with the Holidu URL for this property
+          -->
+          <a href="https://www.holidu.com/TODO" class="btn btn--primary">Reservar</a>
+        </div>
+      </article>
+
+
+      <!-- ── Property 2: Porto Côvo ─────────────── -->
+      <article
+        class="property property--img-right property--pad-top-sm"
+        id="portocovo"
+        aria-labelledby="portocovo-name"
+      >
+        <div class="property__info">
+          <div class="property__header">
+            <span class="property__location">Porto Côvo</span>
+            <div class="property__title-group">
+              <h3 class="heading-xl" id="portocovo-name">Casa de Baia</h3>
+              <p class="property__meta">4 pessoas · 2 quartos · 5 camas · 1 casa de banho</p>
+            </div>
+          </div>
+
+          <div class="body-text">
+            <p>Agora sim, já está suficientemente longe do Norte para não Ihe sentir o cheiro. Esta casa está localizada mesmo em cima do mar, no coração da aldeia de Porto Côvo e com vista sobre o porto de pesca.</p>
+            <p>É uma casa renovada, de dois andares e com uma abordagem que combina a modernidade e a tradição de uma família que pertence a esta aldeia há cerca de 100 anos.</p>
+          </div>
+
+          <!--
+            BOOK BUTTON — update href with the Holidu URL for this property
+          -->
+          <a href="https://www.holidu.com/TODO" class="btn btn--primary">Reservar</a>
+        </div>
+
+        <div class="gallery gallery--mirrored">
+          <div class="gallery__photo gallery__photo--main">
+            <img
+              src="assets/images/photo-portocovo-main.png"
+              alt="Exterior da Casa de Baia em Porto Côvo"
+            />
+          </div>
+          <div class="gallery__photo gallery__photo--sm-br">
+            <img src="assets/images/photo-portocovo-2.png" alt="" />
+          </div>
+          <div class="gallery__photo gallery__photo--sm-ml">
+            <img src="assets/images/photo-portocovo-3.png" alt="" />
+          </div>
+        </div>
+      </article>
+
+
+      <!-- ── Property 3: Cercal do Alentejo ──────── -->
+      <article
+        class="property property--img-left property--pad-top-lg"
+        id="cercal"
+        aria-labelledby="cercal-name"
+      >
+        <div class="gallery">
+          <div class="gallery__photo gallery__photo--main">
+            <img
+              src="assets/images/photo-cercal-main.png"
+              alt="Exterior do Ecletic Monte Laginha no Cercal do Alentejo"
+            />
+          </div>
+          <div class="gallery__photo gallery__photo--sm-br">
+            <img src="assets/images/photo-cercal-2.png" alt="" />
+          </div>
+          <div class="gallery__photo gallery__photo--sm-ml">
+            <img src="assets/images/photo-cercal-3.png" alt="" />
+          </div>
+        </div>
+
+        <div class="property__info">
+          <div class="property__header">
+            <span class="property__location">Cercal do Alentejo</span>
+            <div class="property__title-group">
+              <h3 class="heading-xl" id="cercal-name">Ecletic Monte Laginha</h3>
+              <p class="property__meta">6 pessoas · 3 quartos · 7 camas · 2,5 casas de banho</p>
+            </div>
+          </div>
+
+          <div class="body-text">
+            <p>Ainda mais a Sul, este é o nosso ultimo posto de fuga, por enquanto. É uma típica casa agrícola alentejana recém-renovada e transformada num loft em plano aberto. É composta por três quartos, dois deles em mezanino.</p>
+            <p>Este monte está inserido no tradicional montado alentejano e respira a calma do campo, estando, simultaneamente perto do mar, a cerca de 30min de carro de algumas das mais fantásticas praias do litoral do Alentejo.</p>
+          </div>
+
+          <!--
+            BOOK BUTTON — update href with the Holidu URL for this property
+          -->
+          <a href="https://www.holidu.com/TODO" class="btn btn--primary">Reservar</a>
+        </div>
+      </article>
+
+
+      <!-- ── Property 4: Monte Lajinha ─────────── -->
+      <article
+        class="property property--img-right property--pad-top-sm"
+        id="romazeira"
+        aria-labelledby="romazeira-name"
+      >
+        <div class="property__info">
+          <div class="property__header">
+            <span class="property__location">Monte Lajinha</span>
+            <div class="property__title-group">
+              <h3 class="heading-xl" id="romazeira-name">Casa da Romazeira</h3>
+              <p class="property__meta">2 pessoas · 1 quarto · 1 cama · 1 casa de banho</p>
+            </div>
+          </div>
+
+          <div class="body-text">
+            <p>Relaxe neste espaço calmo, elegante e fresco. A Casa da Romanzeira, localizada no Monte Laginha, é o local perfeito para uma escapadela romântica no campo e perto da praia. O silêncio reina, interrompido apenas pelos sons da natureza.</p>
+            <p>A romanzeira está sempre presente, pronta para lhe oferecer romãs grandes e deliciosas, mesmo à sua porta. A casa está localizada entre as aldeias de Cercal do Alentejo e São Luís, ambas com excelentes atrações culturais, paisagísticas e gastronómicas.</p>
+          </div>
+
+          <!--
+            BOOK BUTTON — update href with the Holidu URL for this property
+          -->
+          <a href="https://www.holidu.com/TODO" class="btn btn--primary">Reservar</a>
+        </div>
+
+        <div class="gallery gallery--mirrored">
+          <div class="gallery__photo gallery__photo--main">
+            <img
+              src="assets/images/photo-romazeira-main.png"
+              alt="Interior da Casa da Romazeira no Monte Lajinha"
+            />
+          </div>
+          <div class="gallery__photo gallery__photo--sm-br">
+            <img src="assets/images/photo-romazeira-2.png" alt="" />
+          </div>
+          <div class="gallery__photo gallery__photo--sm-ml">
+            <img src="assets/images/photo-romazeira-3.png" alt="" />
+          </div>
+        </div>
+      </article>
+
+    </section><!-- /properties -->
+
+
+    <!-- ================================================
+         ABOUT US
+         ================================================ -->
+    <section class="section section--about" aria-labelledby="about-heading">
+      <div class="card card--about">
+
+        <!-- Portrait photos — two overlapping polaroids -->
+        <div class="about__portraits" aria-hidden="true">
+          <div class="about__portrait about__portrait--back">
+            <img src="assets/images/profile-2.png" alt="" />
+          </div>
+          <div class="about__portrait about__portrait--front">
+            <img src="assets/images/profile-1.png" alt="" />
+          </div>
+        </div>
+
+        <div class="about__content">
+          <h2 class="heading-xl" id="about-heading">
+            Somos pessoas como tu, que conseguiram fugir para Sul.
+          </h2>
+          <div class="body-text">
+            <p>Queremos ajudar outros a saborear este ponto cardeal como nós o saboreamos, cada vez que fugimos.</p>
+            <p>Acreditamos que a vontade de fugir das pressões do dia-a-dia é sentida por todos em algum momento e raras são as vezes em que podemos efetivamente pôr em prática a frase: vou fugir.</p>
+            <p>Simples, sem complicações.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__copy">© 2026 Fugir para Sul. Todos os diretos reservados.</p>
+
+      <a
+        href="https://www.instagram.com/fugirasul/"
+        class="btn btn--ghost"
+        aria-label="Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="assets/images/icon-instagram.svg" alt="" width="20" height="20" />
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
