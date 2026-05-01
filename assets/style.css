@@ -232,8 +232,9 @@ a   { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-3);
-  margin-top: 190px; /* Figma: top-[190px] */
+  /* Logo → tagline gap: 24px (Figma: logo bottom=366, tagline top=390) */
+  gap: 24px;
+  margin-top: 190px; /* Figma: logo frame y=190 */
   text-align: center;
   padding: 0 var(--sp-3);
 }
@@ -242,7 +243,8 @@ a   { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-3);
+  /* Symbol → lettering gap: 24px (Figma: symbol height=120, lettering y=144) */
+  gap: 24px;
 }
 .hero__logo-symbol   { width: 120px; height: 120px; }
 .hero__logo-wordmark { width: 371px; max-width: 80vw; height: auto; }
@@ -253,14 +255,23 @@ a   { color: inherit; text-decoration: none; }
   line-height: var(--lh-tight);
 }
 
+/* Tagline → CTA gap: 40px (Figma: tagline bottom=410, CTA top=450) */
+.hero__content .btn {
+  margin-top: 16px; /* 24px base gap + 16px = 40px total */
+}
+
 /* ---- Stats row ---- */
+/* Figma: numbers frame y=638 in 800px hero, pinned absolutely */
 .hero__stats {
-  position: relative;
+  position: absolute;
+  top: 638px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
   display: flex;
   align-items: center;
   gap: 4.5rem;
-  padding: var(--sp-3) 0 var(--sp-3);
+  white-space: nowrap;
 }
 
 .stat {
