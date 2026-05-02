@@ -444,13 +444,12 @@
     (function () {
       var nav = document.querySelector('.nav');
 
+      // ── Nav background: appear as soon as user scrolls ──────────────────
       // ── Nav logo: fade in once hero logo scrolls out of view ────────────
       function onScroll() {
-        if (window.scrollY > 180) {
-          nav.classList.add('nav--scrolled');
-        } else {
-          nav.classList.remove('nav--scrolled');
-        }
+        var y = window.scrollY;
+        nav.classList.toggle('nav--opaque',   y > 10);
+        nav.classList.toggle('nav--scrolled', y > 180);
       }
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll(); // run once on load

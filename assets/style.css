@@ -177,7 +177,12 @@ a   { color: inherit; text-decoration: none; }
   position: sticky;
   top: 0;
   z-index: 100;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.nav--opaque {
   background-color: var(--color-bg);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
 }
 
 .nav__inner {
@@ -362,7 +367,7 @@ a   { color: inherit; text-decoration: none; }
    off-screen at 1280px; at wider viewports they show more fully. */
 .hero__photo--tl {
   width: 340px; height: 255px;
-  left: -15px;  top: 31px;
+  left: -15px;  top: -56px;
   transform: rotate(-10deg);
 }
 .hero__photo--tr {
