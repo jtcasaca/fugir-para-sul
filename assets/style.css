@@ -222,7 +222,7 @@ a   { color: inherit; text-decoration: none; }
   position: relative;
   max-width: var(--page-max);
   margin: 0 auto;
-  min-height: 800px;
+  min-height: 720px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -250,7 +250,7 @@ a   { color: inherit; text-decoration: none; }
   align-items: center;
   /* Logo → tagline gap: 24px (Figma: logo bottom=366, tagline top=390) */
   gap: 24px;
-  margin-top: 150px;
+  margin-top: 100px;
   text-align: center;
   padding: 0 var(--sp-3);
 }
@@ -280,7 +280,7 @@ a   { color: inherit; text-decoration: none; }
 /* Figma: numbers frame y=638 in 800px hero, pinned absolutely */
 .hero__stats {
   position: absolute;
-  top: 580px;
+  top: 500px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -349,35 +349,32 @@ a   { color: inherit; text-decoration: none; }
    off-screen at 1280px; at wider viewports they show more fully. */
 .hero__photo--tl {
   width: 340px; height: 255px;
-  left: -15px;  top: 82px;
+  left: -15px;  top: 42px;
   transform: rotate(-10deg);
 }
 .hero__photo--tr {
-  /* Figma: bounding box left=998, photo 250×333 inside 327px wide box */
   width: 250px; height: 333px;
-  left: 998px;  top: 85px;
+  left: 998px;  top: 45px;
   transform: rotate(15deg);
 }
 .hero__photo--ml {
-  /* Figma: intentionally mostly off the left edge */
   width: 240px; height: 160px;
-  left: -64px;  top: 415px;
+  left: -64px;  top: 335px;
   transform: rotate(4deg);
 }
 .hero__photo--mr {
   width: 214px; height: 160px;
-  left: 888px;  top: 630px;
+  left: 888px;  top: 550px;
   transform: rotate(6deg);
 }
 .hero__photo--bl {
   width: 230px; height: 301px;
-  left: 85px;   top: 485px;
+  left: 85px;   top: 405px;
   transform: rotate(-15deg);
 }
 .hero__photo--br {
-  /* Figma: bounding box left=943, extends slightly past 1280px */
   width: 340px; height: 255px;
-  left: 943px;  top: 425px;
+  left: 943px;  top: 345px;
   transform: rotate(-4deg);
 }
 
