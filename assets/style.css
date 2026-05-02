@@ -328,10 +328,23 @@ a   { color: inherit; text-decoration: none; }
   z-index: 1;
 }
 
+/* ---- Photo frame border — color-burn blend overlaid on all picture frames ---- */
+.hero__photo::after,
+.gallery__photo::after,
+.about__portrait::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 0.8px solid var(--color-border);
+  border-radius: inherit;
+  mix-blend-mode: color-burn;
+  pointer-events: none;
+  z-index: 2;
+}
+
 /* Shared photo frame style */
 .hero__photo {
   position: absolute;
-  border: 0.8px solid var(--color-border);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-photo);
   overflow: hidden;
@@ -527,7 +540,6 @@ a   { color: inherit; text-decoration: none; }
 /* Shared photo frame */
 .gallery__photo {
   position: absolute;
-  border: 0.8px solid var(--color-border);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-photo);
   overflow: hidden;
@@ -603,7 +615,6 @@ a   { color: inherit; text-decoration: none; }
   position: absolute;
   width: 133px;
   height: 200px;
-  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-photo);
   overflow: hidden;
