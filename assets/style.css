@@ -479,6 +479,10 @@ a   { color: inherit; text-decoration: none; }
   min-width: 0; /* prevent flex overflow */
 }
 
+.property__info .btn {
+  align-self: flex-start;
+}
+
 .property__header {
   display: flex;
   flex-direction: column;
