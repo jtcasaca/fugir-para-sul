@@ -205,7 +205,10 @@ a   { color: inherit; text-decoration: none; }
 /* Clips photos vertically at 800px and horizontally at the viewport
    edge — wider than the 1280px hero, so photos show in cream margins */
 .hero-outer {
-  overflow: hidden;
+  position: relative;
+  z-index: 10; /* photos float above the next section */
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .hero {
