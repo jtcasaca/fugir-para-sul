@@ -194,6 +194,13 @@ a   { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.nav--scrolled .nav__logo {
+  opacity: 1;
+  pointer-events: auto;
 }
 .nav__logo-symbol   { width: 40px;  height: 40px; }
 .nav__logo-wordmark { height: 16px; width: auto; }
@@ -243,7 +250,7 @@ a   { color: inherit; text-decoration: none; }
   align-items: center;
   /* Logo → tagline gap: 24px (Figma: logo bottom=366, tagline top=390) */
   gap: 24px;
-  margin-top: 190px; /* Figma: logo frame y=190 */
+  margin-top: 150px;
   text-align: center;
   padding: 0 var(--sp-3);
 }
@@ -273,7 +280,7 @@ a   { color: inherit; text-decoration: none; }
 /* Figma: numbers frame y=638 in 800px hero, pinned absolutely */
 .hero__stats {
   position: absolute;
-  top: 638px;
+  top: 580px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -328,6 +335,7 @@ a   { color: inherit; text-decoration: none; }
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-photo);
   overflow: hidden;
+  will-change: transform;
 }
 .hero__photo img {
   width: 100%;
@@ -357,9 +365,8 @@ a   { color: inherit; text-decoration: none; }
   transform: rotate(4deg);
 }
 .hero__photo--mr {
-  /* Figma: bounding box left=888, top=720 (partially below hero fold) */
   width: 214px; height: 160px;
-  left: 888px;  top: 720px;
+  left: 888px;  top: 630px;
   transform: rotate(6deg);
 }
 .hero__photo--bl {

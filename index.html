@@ -440,5 +440,54 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav');
+
+      // ── Nav logo: fade in once hero logo scrolls out of view ────────────
+      function onScroll() {
+        if (window.scrollY > 180) {
+          nav.classList.add('nav--scrolled');
+        } else {
+          nav.classList.remove('nav--scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // run once on load
+
+      // ── Hero parallax ────────────────────────────────────────────────────
+      // Each photo drifts at a different speed (px per px scrolled).
+      // Positive = drifts up (feels close), negative = drifts down (feels far).
+      var parallaxPhotos = [
+        { selector: '.hero__photo--tl', speed:  0.07, rotate: '-10deg' },
+        { selector: '.hero__photo--tr', speed: -0.05, rotate:  '15deg' },
+        { selector: '.hero__photo--ml', speed:  0.04, rotate:   '4deg' },
+        { selector: '.hero__photo--mr', speed: -0.06, rotate:   '6deg' },
+        { selector: '.hero__photo--bl', speed:  0.08, rotate: '-15deg' },
+        { selector: '.hero__photo--br', speed: -0.04, rotate:  '-4deg' },
+      ].map(function (p) {
+        return { el: document.querySelector(p.selector), speed: p.speed, rotate: p.rotate };
+      }).filter(function (p) { return p.el; });
+
+      var heroHeight = (document.querySelector('.hero') || {}).offsetHeight || 800;
+      var ticking = false;
+
+      function applyParallax() {
+        var y = Math.min(window.scrollY, heroHeight); // stop once hero is past
+        parallaxPhotos.forEach(function (p) {
+          p.el.style.transform = 'rotate(' + p.rotate + ') translateY(' + (y * p.speed) + 'px)';
+        });
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(applyParallax);
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+  </script>
+
 </body>
 </html>
