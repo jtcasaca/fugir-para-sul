@@ -556,31 +556,32 @@ a   { color: inherit; text-decoration: none; }
   object-fit: cover;
 }
 
-/* Main photo — large, top area, slight tilt */
+/* Main photo — large, top area, slight clockwise tilt */
 .gallery__photo--main {
   width: 448px; height: 272px;
   right: 0; top: 0;
   transform: rotate(4deg);
 }
 
-/* Smaller photo — bottom right, tilted the other way */
+/* Smaller photo — bottom right, clockwise tilt */
 .gallery__photo--sm-br {
   width: 260px; height: 173px;
-  right: 14px; bottom: 0;
-  transform: rotate(-12.42deg);
+  right: 30px; bottom: 10px;
+  transform: rotate(-7deg);
 }
 
-/* Smaller photo — mid left, slight forward tilt */
+/* Smaller photo — mid left, counter-clockwise tilt, bleeds left (away from text) */
 .gallery__photo--sm-ml {
   width: 240px; height: 160px;
   left: -82px; top: 175px;
-  transform: rotate(10deg);
+  transform: rotate(-8deg);
 }
 
-/* Mirror rotations for right-side galleries (properties 2 & 4) */
-.gallery--mirrored .gallery__photo--main  { transform: rotate(-4deg); }
-.gallery--mirrored .gallery__photo--sm-br { transform: rotate(12.42deg); }
-.gallery--mirrored .gallery__photo--sm-ml { transform: rotate(-10deg); }
+/* Mirror for right-side galleries (properties 2 & 4):
+   flip positions so the cluster is left-anchored and sm-ml bleeds rightward (away from text) */
+.gallery--mirrored .gallery__photo--main  { left: 0; right: auto; transform: rotate(-4deg); }
+.gallery--mirrored .gallery__photo--sm-br { left: 30px; right: auto; transform: rotate(7deg); }
+.gallery--mirrored .gallery__photo--sm-ml { left: auto; right: -82px; transform: rotate(8deg); }
 
 /* =====================================================
    ABOUT SECTION
