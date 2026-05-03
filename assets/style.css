@@ -688,52 +688,47 @@ a   { color: inherit; text-decoration: none; }
     gap: var(--sp-3);
   }
 
-  /* Gallery: scattered polaroid cluster — always first in the property card */
+  /* Gallery: fixed-size scattered cluster — always first, same layout for all properties */
   .property .gallery { order: -1; }
 
   .gallery {
     position: relative;
-    width: 100%;
-    height: 280px;
+    width: 270px;   /* fixed, like desktop — does not stretch to viewport */
+    height: 255px;
     display: block;
+    margin: 0 auto;
   }
   .gallery__photo {
     position: absolute;
-    background-color: #fff;
-    padding: 7px;
-    border: none;
+    /* No white border — same clean style as desktop (base box-shadow + ::after color-burn handle it) */
   }
   .gallery__photo--main {
-    width: 200px;
-    height: 155px;
-    left: 8px;
-    right: auto; /* cancel base right: 0 */
-    top: 30px;
-    bottom: auto;
-    transform: rotate(-4deg);
+    width: 246px; height: 150px;
+    right: 0;    left: auto;
+    top: 0;      bottom: auto;
+    transform: rotate(4deg);
     z-index: 1;
   }
   .gallery__photo--sm-br {
     display: block;
-    width: 148px;
-    height: 112px;
-    right: 8px;
-    top: 5px;
-    bottom: auto; /* cancel base bottom: 0 */
-    transform: rotate(7deg);
+    width: 143px; height: 95px;
+    right: 17px;  left: auto;
+    bottom: 28px; top: auto;
+    transform: rotate(-7deg);
     z-index: 2;
   }
   .gallery__photo--sm-ml {
     display: block;
-    width: 158px;
-    height: 118px;
-    left: auto; /* cancel base left: -82px */
-    right: 8px;
-    top: auto;  /* cancel base top: 175px */
-    bottom: 8px;
-    transform: rotate(-6deg);
+    width: 132px; height: 88px;
+    left: -45px;  right: auto;
+    top: 96px;    bottom: auto;
+    transform: rotate(8deg);
     z-index: 3;
   }
+  /* Reset mirrored positions on mobile — same arrangement for all accommodations */
+  .gallery--mirrored .gallery__photo--main  { left: auto; right: 0;    transform: rotate(4deg);  }
+  .gallery--mirrored .gallery__photo--sm-br { left: auto; right: 17px; transform: rotate(-7deg); }
+  .gallery--mirrored .gallery__photo--sm-ml { left: -45px; right: auto; transform: rotate(8deg); }
 
   /* About card: portrait cluster moves to top */
   .card--about {
