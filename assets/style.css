@@ -574,14 +574,14 @@ a   { color: inherit; text-decoration: none; }
 .gallery__photo--sm-ml {
   width: 240px; height: 160px;
   left: -82px; top: 175px;
-  transform: rotate(-8deg);
+  transform: rotate(8deg);
 }
 
 /* Mirror for right-side galleries (properties 2 & 4):
    flip positions so the cluster is left-anchored and sm-ml bleeds rightward (away from text) */
 .gallery--mirrored .gallery__photo--main  { left: 0; right: auto; transform: rotate(-4deg); }
 .gallery--mirrored .gallery__photo--sm-br { left: 30px; right: auto; transform: rotate(7deg); }
-.gallery--mirrored .gallery__photo--sm-ml { left: auto; right: -82px; transform: rotate(8deg); }
+.gallery--mirrored .gallery__photo--sm-ml { left: auto; right: -82px; transform: rotate(-8deg); }
 
 /* =====================================================
    ABOUT SECTION
