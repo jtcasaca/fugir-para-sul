@@ -242,7 +242,7 @@ a   { color: inherit; text-decoration: none; }
   width: 800px;
   height: 800px;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1; /* paints above page bg but below all normal-flow elements (manifesto card) */
 }
 
 /* ---- Central content ---- */
@@ -335,8 +335,7 @@ a   { color: inherit; text-decoration: none; }
 /* ---- Photo frame border — color-burn blend overlaid on all picture frames ---- */
 .hero__photo::after,
 .gallery__photo::after,
-.about__portrait::after,
-.hero__polaroid::after {
+.about__portrait::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -395,24 +394,6 @@ a   { color: inherit; text-decoration: none; }
   left: 943px;  top: 339px;
   transform: rotate(-4deg);
 }
-
-/* ---- Hero polaroid pair (mobile/tablet only, hidden on desktop) ---- */
-.hero__polaroids { display: none; }
-
-.hero__polaroid {
-  position: absolute;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-photo);
-  overflow: hidden;
-}
-.hero__polaroid img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.hero__polaroid--back  { width: 190px; height: 128px; left: 0;  top: 0;    transform: rotate(-6deg); }
-.hero__polaroid--front { width: 190px; height: 128px; right: 0; bottom: 0; transform: rotate(5deg); }
 
 /* =====================================================
    SECTION WRAPPER
@@ -677,8 +658,8 @@ a   { color: inherit; text-decoration: none; }
   .nav__logo-wordmark { max-width: 140px; }
 
   /* Hero */
-  .hero { min-height: auto; overflow: hidden; padding-bottom: var(--sp-5); }
-  .hero__photos { display: none; }
+  .hero { min-height: auto; padding-bottom: var(--sp-5); }
+  .hero__photos { display: block; z-index: 1; }
   .hero__content { margin-top: var(--sp-4); }
   .hero__logo-symbol   { width: 80px; height: 80px; }
   .hero__logo-wordmark { width: 240px; }
@@ -689,14 +670,12 @@ a   { color: inherit; text-decoration: none; }
     margin-top: var(--sp-4);
     gap: var(--sp-4);
   }
-  .hero__polaroids {
-    display: block;
-    position: relative;
-    width: 300px;
-    height: 180px;
-    margin-top: var(--sp-3);
-    flex-shrink: 0;
-  }
+  .hero__photo--tl { width: 160px; height: 120px; left: -30px; top: 20px;  transform: rotate(-10deg); }
+  .hero__photo--tr { width: 150px; height: 110px; left: 255px; top: 30px;  transform: rotate(12deg); }
+  .hero__photo--ml { width: 150px; height: 100px; left: -45px; top: 210px; transform: rotate(4deg); }
+  .hero__photo--mr { width: 150px; height: 100px; left: 260px; top: 250px; transform: rotate(6deg); }
+  .hero__photo--bl,
+  .hero__photo--br { display: none; }
 
   /* Cards */
   .card { margin: 0; border-radius: 0; }
@@ -732,9 +711,9 @@ a   { color: inherit; text-decoration: none; }
 /* ---- Medium / Tablet (640px – 1023px) ---- */
 @media (min-width: 640px) and (max-width: 1023px) {
 
-  /* Hero: hide scattered photos */
-  .hero__photos { display: none; }
-  .hero { min-height: auto; overflow: hidden; padding-bottom: var(--sp-5); }
+  /* Hero */
+  .hero__photos { display: block; z-index: 1; }
+  .hero { min-height: auto; padding-bottom: var(--sp-5); }
   .hero__content { margin-top: var(--sp-6); }
   .section--manifesto { margin-top: 0; padding-top: 0; }
   .hero__logo-symbol   { width: 100px; height: 100px; }
@@ -744,14 +723,12 @@ a   { color: inherit; text-decoration: none; }
     transform: none;
     margin-top: var(--sp-4);
   }
-  .hero__polaroids {
-    display: block;
-    position: relative;
-    width: 340px;
-    height: 200px;
-    margin-top: var(--sp-4);
-    flex-shrink: 0;
-  }
+  .hero__photo--tl { width: 220px; height: 165px; left: -30px; top: 20px;  transform: rotate(-10deg); }
+  .hero__photo--tr { width: 200px; height: 150px; left: 600px; top: 30px;  transform: rotate(12deg); }
+  .hero__photo--ml { width: 200px; height: 135px; left: -50px; top: 230px; transform: rotate(4deg); }
+  .hero__photo--mr { width: 200px; height: 135px; left: 620px; top: 270px; transform: rotate(6deg); }
+  .hero__photo--bl,
+  .hero__photo--br { display: none; }
 
   /* Properties: stack on tablet */
   .property,
