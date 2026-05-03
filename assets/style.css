@@ -218,7 +218,7 @@ a   { color: inherit; text-decoration: none; }
    edge — wider than the 1280px hero, so photos show in cream margins */
 .hero-outer {
   position: relative;
-  z-index: 10; /* photos float above the next section */
+  z-index: auto;
   overflow: visible; /* body handles horizontal clip; photos bleed in all directions */
 }
 
@@ -329,13 +329,14 @@ a   { color: inherit; text-decoration: none; }
   inset: 0;
   pointer-events: none;
   user-select: none;
-  z-index: 1;
+  z-index: 10; /* float above the manifesto card on desktop */
 }
 
 /* ---- Photo frame border — color-burn blend overlaid on all picture frames ---- */
 .hero__photo::after,
 .gallery__photo::after,
-.about__portrait::after {
+.about__portrait::after,
+.hero__polaroid::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -394,6 +395,24 @@ a   { color: inherit; text-decoration: none; }
   left: 943px;  top: 339px;
   transform: rotate(-4deg);
 }
+
+/* ---- Hero polaroid pair (mobile/tablet only, hidden on desktop) ---- */
+.hero__polaroids { display: none; }
+
+.hero__polaroid {
+  position: absolute;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-photo);
+  overflow: hidden;
+}
+.hero__polaroid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero__polaroid--back  { width: 190px; height: 128px; left: 0;  top: 0;    transform: rotate(-6deg); }
+.hero__polaroid--front { width: 190px; height: 128px; right: 0; bottom: 0; transform: rotate(5deg); }
 
 /* =====================================================
    SECTION WRAPPER
@@ -658,7 +677,6 @@ a   { color: inherit; text-decoration: none; }
   .nav__logo-wordmark { max-width: 140px; }
 
   /* Hero */
-  .hero-outer { z-index: auto; }
   .hero { min-height: auto; overflow: hidden; padding-bottom: var(--sp-5); }
   .hero__photos { display: none; }
   .hero__content { margin-top: var(--sp-4); }
@@ -670,6 +688,14 @@ a   { color: inherit; text-decoration: none; }
     transform: none;
     margin-top: var(--sp-4);
     gap: var(--sp-4);
+  }
+  .hero__polaroids {
+    display: block;
+    position: relative;
+    width: 300px;
+    height: 180px;
+    margin-top: var(--sp-3);
+    flex-shrink: 0;
   }
 
   /* Cards */
@@ -707,7 +733,6 @@ a   { color: inherit; text-decoration: none; }
 @media (min-width: 640px) and (max-width: 1023px) {
 
   /* Hero: hide scattered photos */
-  .hero-outer { z-index: auto; }
   .hero__photos { display: none; }
   .hero { min-height: auto; overflow: hidden; padding-bottom: var(--sp-5); }
   .hero__content { margin-top: var(--sp-6); }
@@ -718,6 +743,14 @@ a   { color: inherit; text-decoration: none; }
     position: static;
     transform: none;
     margin-top: var(--sp-4);
+  }
+  .hero__polaroids {
+    display: block;
+    position: relative;
+    width: 340px;
+    height: 200px;
+    margin-top: var(--sp-4);
+    flex-shrink: 0;
   }
 
   /* Properties: stack on tablet */
