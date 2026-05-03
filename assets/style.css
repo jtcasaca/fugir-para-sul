@@ -693,42 +693,41 @@ a   { color: inherit; text-decoration: none; }
 
   .gallery {
     position: relative;
-    width: 270px;   /* fixed, like desktop — does not stretch to viewport */
-    height: 255px;
+    width: 280px;
+    height: 225px;
     display: block;
     margin: 0 auto;
   }
   .gallery__photo {
     position: absolute;
-    /* No white border — same clean style as desktop (base box-shadow + ::after color-burn handle it) */
   }
   .gallery__photo--main {
-    width: 246px; height: 150px;
-    right: 0;    left: auto;
-    top: 0;      bottom: auto;
+    width: 253px; height: 153px;
+    left: 19px;  right: auto;
+    top: 9px;    bottom: auto;
     transform: rotate(4deg);
-    z-index: 1;
+    z-index: 3;
   }
   .gallery__photo--sm-br {
     display: block;
-    width: 143px; height: 95px;
-    right: 17px;  left: auto;
-    bottom: 28px; top: auto;
-    transform: rotate(-7deg);
+    width: 147px; height: 98px;
+    right: 9px;  left: auto;
+    top: 108px;  bottom: auto;
+    transform: rotate(-12.42deg);
     z-index: 2;
   }
   .gallery__photo--sm-ml {
     display: block;
-    width: 132px; height: 88px;
-    left: -45px;  right: auto;
-    top: 96px;    bottom: auto;
-    transform: rotate(8deg);
-    z-index: 3;
+    width: 135px; height: 90px;
+    left: 7px;   right: auto;
+    top: 111px;  bottom: auto;
+    transform: rotate(10deg);
+    z-index: 1;
   }
   /* Reset mirrored positions on mobile — same arrangement for all accommodations */
-  .gallery--mirrored .gallery__photo--main  { left: auto; right: 0;    transform: rotate(4deg);  }
-  .gallery--mirrored .gallery__photo--sm-br { left: auto; right: 17px; transform: rotate(-7deg); }
-  .gallery--mirrored .gallery__photo--sm-ml { left: -45px; right: auto; transform: rotate(8deg); }
+  .gallery--mirrored .gallery__photo--main  { left: 19px; right: auto; transform: rotate(4deg);     }
+  .gallery--mirrored .gallery__photo--sm-br { right: 9px; left: auto;  transform: rotate(-12.42deg); }
+  .gallery--mirrored .gallery__photo--sm-ml { left: 7px;  right: auto; transform: rotate(10deg);    }
 
   /* About card: portrait cluster moves to top */
   .card--about {
