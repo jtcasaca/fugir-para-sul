@@ -442,7 +442,7 @@ a   { color: inherit; text-decoration: none; }
    ===================================================== */
 
 .section--manifesto {
-  padding: var(--sp-6) 0;
+  padding: var(--sp-4) 0;
   margin-top: -160px;
 }
 
@@ -460,7 +460,7 @@ a   { color: inherit; text-decoration: none; }
 
 .section--properties {
   position: relative;
-  padding-bottom: var(--sp-7);
+  padding-bottom: var(--sp-5);
 }
 
 /* Decorative route path: faint centred line running through all properties */
@@ -508,8 +508,8 @@ a   { color: inherit; text-decoration: none; }
 .property--img-right { flex-direction: row-reverse; }
 
 /* Alternate vertical padding (120 top / 80 bottom, then 80 top / 120 bottom) */
-.property--pad-top-lg  { padding-top: var(--sp-7); padding-bottom: var(--sp-6); }
-.property--pad-top-sm  { padding-top: var(--sp-6); padding-bottom: var(--sp-7); }
+.property--pad-top-lg  { padding-top: var(--sp-5); padding-bottom: var(--sp-4); }
+.property--pad-top-sm  { padding-top: var(--sp-4); padding-bottom: var(--sp-5); }
 
 /* Property text column */
 .property__info {
@@ -700,14 +700,14 @@ a   { color: inherit; text-decoration: none; }
   }
 
   /* Cards */
-  .section--manifesto { margin-top: -80px; padding-top: 0; }
+  .section--manifesto { margin-top: -80px; padding-top: 0; padding-bottom: var(--sp-4); }
   .section--manifesto .card { padding: 96px var(--sp-3) var(--sp-6); }
 
   /* Properties: stack vertically */
   .property,
   .property--img-right {
     flex-direction: column;
-    padding: var(--sp-6) var(--sp-3);
+    padding: var(--sp-4) var(--sp-3);
     gap: var(--sp-3);
   }
 
@@ -755,12 +755,13 @@ a   { color: inherit; text-decoration: none; }
     flex-shrink: 0;
   }
   .section--manifesto .card { padding: 106px var(--sp-4) var(--sp-6); }
+  .section--manifesto { padding-bottom: var(--sp-4); }
 
   /* Properties: stack on tablet */
   .property,
   .property--img-right {
     flex-direction: column;
-    padding: var(--sp-6) var(--sp-4);
+    padding: var(--sp-4) var(--sp-4);
     gap: var(--sp-3);
   }
 
