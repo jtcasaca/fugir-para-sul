@@ -715,12 +715,13 @@ a   { color: inherit; text-decoration: none; }
   .property .gallery { order: -1; }
   .gallery { width: 100%; height: 220px; }
 
-  /* About card: portrait cluster moves to top */
+  /* About card: portraits float above card, card slides up under them */
   .card--about {
-    padding: 300px var(--sp-3) var(--sp-6);
+    margin-top: 140px;
+    padding: 136px var(--sp-3) var(--sp-6);
   }
   .about__portraits {
-    top: var(--sp-6);
+    top: -140px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -766,12 +767,13 @@ a   { color: inherit; text-decoration: none; }
   /* Gallery: full width at tablet */
   .gallery { width: 100%; height: 300px; }
 
-  /* About card */
+  /* About card: portraits float above card, card slides up under them */
   .card--about {
-    padding: 320px var(--sp-4) var(--sp-6);
+    margin-top: 140px;
+    padding: 136px var(--sp-4) var(--sp-6);
   }
   .about__portraits {
-    top: var(--sp-6);
+    top: -140px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -784,6 +786,7 @@ a   { color: inherit; text-decoration: none; }
 
   /* Restore about card side-by-side */
   .card--about {
+    margin-top: 0;
     padding: var(--sp-6) 200px var(--sp-6) 480px;
   }
   .about__portraits {
