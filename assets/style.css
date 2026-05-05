@@ -507,8 +507,8 @@ a   { color: inherit; text-decoration: none; }
 /* Even properties: gallery on right, so reverse direction */
 .property--img-right { flex-direction: row-reverse; }
 
-.property--pad-top-lg  { padding-top: var(--sp-4); padding-bottom: var(--sp-4); }
-.property--pad-top-sm  { padding-top: var(--sp-4); padding-bottom: var(--sp-4); }
+.property--pad-top-lg  { padding-top: var(--sp-5); padding-bottom: var(--sp-5); }
+.property--pad-top-sm  { padding-top: var(--sp-5); padding-bottom: var(--sp-5); }
 
 /* Property text column */
 .property__info {
@@ -706,7 +706,7 @@ a   { color: inherit; text-decoration: none; }
   .property,
   .property--img-right {
     flex-direction: column;
-    padding: var(--sp-4) var(--sp-3);
+    padding: var(--sp-5) var(--sp-3);
     gap: var(--sp-3);
   }
 
@@ -761,7 +761,7 @@ a   { color: inherit; text-decoration: none; }
   .property,
   .property--img-right {
     flex-direction: column;
-    padding: var(--sp-4) var(--sp-4);
+    padding: var(--sp-5) var(--sp-4);
     gap: var(--sp-3);
   }
 
