@@ -23,6 +23,7 @@
   --color-cta-text:   #ffffff;
   --color-border:     #7d8385;             /* neutral grey — photo frame border */
   --color-ghost:      rgba(32,32,32,0.08); /* ghost button background           */
+  --stroke-0:         #b08060;             /* deco-path stroke — warm mid-brown */
 
   /* ---- Typography ---- */
   --font-display: 'Fraunces', Georgia, serif;   /* headings / display */
@@ -465,17 +466,16 @@ a   { color: inherit; text-decoration: none; }
 
 /* Decorative route path: faint centred line running through all properties */
 .deco-path {
+  display: none;
   position: absolute;
   left: 50%;
   top: 0;
   transform: translateX(-50%);
   width: 524px;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.25;
+  opacity: 0.6;
 }
 
 /* Horizontal fade — makes the section edges bleed softly into the page bg */
@@ -783,6 +783,7 @@ a   { color: inherit; text-decoration: none; }
 @media (min-width: 1024px) {
   /* Everything shows as designed */
   .hero__photos { display: block; }
+  .deco-path    { display: block; }
 
   /* Restore about card side-by-side */
   .card--about {
