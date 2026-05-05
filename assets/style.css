@@ -597,7 +597,7 @@ a   { color: inherit; text-decoration: none; }
    ===================================================== */
 
 .section--about {
-  padding-bottom: var(--sp-6);
+  padding-bottom: var(--sp-3);
 }
 
 /* About card: portraits absolutely positioned on left, text on right */
