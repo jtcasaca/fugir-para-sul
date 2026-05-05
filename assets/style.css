@@ -507,9 +507,8 @@ a   { color: inherit; text-decoration: none; }
 /* Even properties: gallery on right, so reverse direction */
 .property--img-right { flex-direction: row-reverse; }
 
-/* Alternate vertical padding (120 top / 80 bottom, then 80 top / 120 bottom) */
-.property--pad-top-lg  { padding-top: var(--sp-5); padding-bottom: var(--sp-4); }
-.property--pad-top-sm  { padding-top: var(--sp-4); padding-bottom: var(--sp-5); }
+.property--pad-top-lg  { padding-top: var(--sp-4); padding-bottom: var(--sp-4); }
+.property--pad-top-sm  { padding-top: var(--sp-4); padding-bottom: var(--sp-4); }
 
 /* Property text column */
 .property__info {
