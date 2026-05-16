@@ -373,7 +373,7 @@ a   { color: inherit; text-decoration: none; }
 }
 .hero__photo--tr {
   width: 250px; height: 333px;
-  left: 1084px; top: 20px;
+  right: -54px; top: 20px;
   transform: rotate(15deg);
 }
 .hero__photo--ml {
@@ -383,7 +383,7 @@ a   { color: inherit; text-decoration: none; }
 }
 .hero__photo--mr {
   width: 214px; height: 160px;
-  left: 905px;  top: 610px;
+  right: 161px; top: 610px;
   transform: rotate(6deg);
 }
 .hero__photo--bl {
@@ -393,7 +393,7 @@ a   { color: inherit; text-decoration: none; }
 }
 .hero__photo--br {
   width: 340px; height: 255px;
-  left: 943px;  top: 339px;
+  right: -3px;  top: 339px;
   transform: rotate(-4deg);
 }
 
